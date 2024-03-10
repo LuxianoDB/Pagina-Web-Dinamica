@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function EsGrito(texto){
+            let ContG=0,ContE=0;
+            let regex = /^[a-zA-Z]+$/;
+            let Grita = false;
+            for(i = 0; i < texto.length;i++){
+                let char = texto.charAt(i);
+                if(char == '!'){
+                    ContG++;
+                }
+                else if(regex.test(char)){
+                    ContE++;
+                }
+            }
+
+            if(ContG > ContE){
+                Grita = true;
+            }
+
+            return Grita;
+        }
+
+        let a = prompt('Texto','');
+        let esc = "escrito";
+
+        if(EsGrito(a) == true){
+            esc = "ESGRITO";
+        }
+
+        document.write(esc + "<br>");
+    </script>
+</body>
+</html>
