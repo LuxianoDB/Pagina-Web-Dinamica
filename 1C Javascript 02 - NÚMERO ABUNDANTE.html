@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function EsAbundante(a){
+            let abun = false;
+            let c = 0;
+            for(i = 2; i < a; i++){
+                if(a%i == 0){
+                    c += i;
+                }
+            }
+
+            if(c > a){
+                abun = true;
+            }
+
+            return abun;
+        }
+
+        let n = parseInt(prompt('ingrese numero: ',''));
+        let msg = "No es Abundante";
+
+        if(EsAbundante(n) == true){
+            msg = "Es Abundante";
+        }
+
+        document.write(msg + "<br>");
+
+    </script>
+</body>
+</html>
