@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Presente_Yo(texto){
+            return "Yo " + texto + "o";
+        }
+
+        function Presente_Tu(texto, termino){
+            let x = "as"
+
+            if(termino != "ar"){
+                x = "es"
+            }
+
+            return "Tu " + texto + x;
+        }
+
+        function Presente_El(texto,termino){
+            let x = "a"
+
+            if(termino != "ar"){
+                x = "e"
+            }
+
+            return "El " + texto + x;
+        }
+
+        function Presente_Nosotros(texto,termino){
+            let x = "amos"
+
+            if(termino == "er"){
+                x = "emos";
+            }
+            else if (termino == "ir"){
+                x = "imos";
+            }
+
+            return "Nosotros " + texto + x;
+        }
+        
+        function Presente_Vosotros(texto,termino){
+            let x = "ais"
+
+            if(termino == "er"){
+                x = "eis";
+            }
+            else if (termino == "ir"){
+                x = "is";
+            }
+
+            return "Vosotros " + texto + x;
+        }
+
+        function Presente_Ellos(texto,termino){
+            let x = "an"
+
+            if(termino != "ar"){
+                x = "en"
+            }
+
+            return "Ellos " + texto + x;
+        }
+
+        //
+
+        function Pretérito_Yo(texto,termino){
+            let x = "e"
+
+            if(termino != "ar"){
+                x = "i"
+            }
+
+            return "Yo " + texto + x;
+        }
+
+        function Pretérito_Tu(texto, termino){
+            let x = "aste"
+
+            if(termino != "ar"){
+                x = "iste"
+            }
+
+            return "Tu " + texto + x;
+        }
+
+        function Pretérito_El(texto,termino){
+            let x = "o"
+
+            if(termino != "ar"){
+                x = "io"
+            }
+
+            return "El " + texto + x;
+        }
+
+        function Pretérito_Nosotros(texto,termino){
+            let x = "amos"
+
+            if(termino != "ar"){
+                x = "imos";
+            }
+
+            return "Nosotros " + texto + x;
+        }
+        
+        function Pretérito_Vosotros(texto,termino){
+            let x = "asteis"
+
+            if(termino != "ar"){
+                x = "isteis";
+            }
+
+            return "Vosotros " + texto + x;
+        }
+
+        function Pretérito_Ellos(texto,termino){
+            let x = "aron"
+
+            if(termino != "ar"){
+                x = "ieron"
+            }
+
+            return "Ellos " + texto + x;
+        }
+
+        //
+
+        function Futuro_Yo(texto,termino){
+            let x = "are"
+
+            if(termino == "er"){
+                x = "ere";
+            }
+            else if (termino == "ir"){
+                x = "ire";
+            }
+
+            return "Yo " + texto + x;
+        }
+
+        function Futuro_Tu(texto, termino){
+            let x = "aras"
+
+            if(termino == "er"){
+                x = "eras";
+            }
+            else if (termino == "ir"){
+                x = "iras";
+            }
+
+            return "Tu " + texto + x;
+        }
+
+        function Futuro_El(texto,termino){
+            let x = "ara"
+
+            if(termino == "er"){
+                x = "era";
+            }
+            else if (termino == "ir"){
+                x = "ira";
+            }
+
+            return "El " + texto + x;
+        }
+
+        function Futuro_Nosotros(texto,termino){
+            let x = "aremos"
+
+            if(termino == "er"){
+                x = "eremos";
+            }
+            else if (termino == "ir"){
+                x = "iremos";
+            }
+
+            return "Nosotros " + texto + x;
+        }
+        
+        function Futuro_Vosotros(texto,termino){
+            let x = "areis"
+
+            if(termino == "er"){
+                x = "ereis";
+            }
+            else if (termino == "ir"){
+                x = "ireis";
+            }
+
+            return "Vosotros " + texto + x;
+        }
+
+        function Futuro_Ellos(texto,termino){
+            let x = "aran"
+
+            if(termino == "er"){
+                x = "eran";
+            }
+            else if (termino == "ir"){
+                x = "iran";
+            }
+
+            return "Ellos " + texto + x;
+        }
+
+        let a = prompt('Texto','');
+
+        let final = a.charAt(a.length-1);
+        //let final = a.slice(a.length - 4);
+        final = final.toLowerCase()
+
+        let abrev = a.slice(0,-4);
+        abrev = abrev.toLowerCase()
+
+        let ultimos = a.slice(a.length - 4, -2);
+
+        let Tiempos = "";
+        switch(final){
+            case 'a':
+                Tiempos = Presente_Yo(abrev) + '<br>' + Presente_Tu(abrev,ultimos) + '<br>' + Presente_El(abrev,ultimos) + '<br>' + Presente_Nosotros(abrev,ultimos) + '<br>' + Presente_Vosotros(abrev,ultimos) + '<br>' + Presente_Ellos(abrev,ultimos);
+                break;
+            case 'p':
+                Tiempos = Pretérito_Yo(abrev,ultimos) + '<br>' + Pretérito_Tu(abrev,ultimos) + '<br>' + Pretérito_El(abrev,ultimos) + '<br>' + Pretérito_Nosotros(abrev,ultimos) + '<br>' + Pretérito_Vosotros(abrev,ultimos) + '<br>' + Pretérito_Ellos(abrev,ultimos);
+                break;
+            case 'f':
+            Tiempos = Futuro_Yo(abrev,ultimos) + '<br>' + Futuro_Tu(abrev,ultimos) + '<br>' + Futuro_El(abrev,ultimos) + '<br>' + Futuro_Nosotros(abrev,ultimos) + '<br>' + Futuro_Vosotros(abrev,ultimos) + '<br>' + Futuro_Ellos(abrev,ultimos);
+                break;
+        }
+        document.write(Tiempos);
+    </script>
+</body>
+</html>
