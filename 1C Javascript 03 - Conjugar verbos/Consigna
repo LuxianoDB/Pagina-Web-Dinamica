@@ -1,0 +1,12 @@
+Conjugar verbos.
+
+Este ejercicio lo deben realizar en el lenguaje Javascript.
+Cada conjugación del verbo la deben realizar en una función diferente.
+Deben diferenciar si el verbo termina en AR - ER o IR -anteúltima letra- y para cada conjugación deberán hacer una función
+(para el tiempo Presente deben hacer 6 funciones- yo - tu - él - nosotros- vosotros- ellXs)
+(para el tiempo Pretérito deben hacer 6 funciones- yo - tu - él - nosotros- vosotros- ellXs)
+(para el tiempo Futuro deben hacer 6 funciones- yo - tu - él - nosotros- vosotros- ellXs)
+teniendo en cuenta el verbo ingresado.
+.
+
+Hacerlos con funciones que devuelvan un string (cadena de caracteres con el verbo conjugado).
