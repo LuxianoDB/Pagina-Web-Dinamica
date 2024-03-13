@@ -10,15 +10,18 @@
     <script>
         function EsAbundante(a){
             let abun = false;
+            let lista = "";
             let c = 0;
             for(i = 2; i < a; i++){
                 if(a%i == 0){
                     c += i;
+                    lista = lista + "<br>" + i;
                 }
             }
 
             if(c > a){
                 abun = true;
+                document.write(lista + "<br>");
             }
 
             return abun;
