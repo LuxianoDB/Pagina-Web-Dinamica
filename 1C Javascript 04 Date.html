@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mostrarFechaHora(fecha) {
+            // let fecha;
+            // fecha = new Date();
+            document.write('Hoy es ');
+            document.write(fecha.getDate() + '/');
+            document.write((fecha.getMonth() + 1) + '/');
+            document.write(fecha.getFullYear());
+            document.write('<br>');
+            document.write('Es la hora ');
+            document.write(fecha.getHours() + ':');
+            document.write(fecha.getMinutes() + ':');
+            document.write(fecha.getSeconds());
+            document.write('<br>');
+            document.write('<br>');
+        }
+
+        function CantidaddiasAnioNuevo(date){
+            let Actual = date;
+            Actual.setHours(0);
+            Actual.setMilliseconds(0);
+            Actual.setMinutes(0);
+            Actual.setSeconds(0);
+
+            let NewYear = new Date(Actual);
+            NewYear.setFullYear(date.getFullYear()+1,0,1);
+
+            let time =
+                NewYear.getTime() - date.getTime();
+
+            let days =
+                Math.round(time / (1000 * 3600 * 24));//round = redondea el valor al entero mas cercano.
+                
+            return days;
+        }
+
+        function CantidadMesesCampeon(date){
+            let mundial = new Date(2022,11,18);
+            let months = (date.getFullYear() - mundial.getFullYear()) * 12;
+            months -= mundial.getMonth();
+            months += date.getMonth();
+            return months;
+        }
+
+        function CantidadAniosNacimiento(date){
+            let birthday = new Date(2005,10,27);//fecha de cumpleaños
+            var ageDifMs = Date.now() - birthday;//Calcula los milisegundos pasados desde la epoca y le resta el cumpleaños
+            var ageDate = new Date(ageDifMs);//crea una nueva fecha en base a los milisegundos restantes
+            return Math.abs(ageDate.getUTCFullYear() - 1970);//retorna el año de la fecha menos el año de la epoca, dando los años pasados desde el cummpleaños hasta el dia de hoy.
+        }
+
+        let fecha = new Date();
+        document.write("Cantidad de Dias para año Nuevo "+ CantidaddiasAnioNuevo(fecha)+"<br>");
+        document.write("Cantidad de Meses de Argentina como Campeona " + CantidadMesesCampeon(fecha)+"<br>");
+        document.write("Años desde mi nacimiento " + CantidadAniosNacimiento(fecha)+"<br>");
+    </script>
+</body>
+</html>
