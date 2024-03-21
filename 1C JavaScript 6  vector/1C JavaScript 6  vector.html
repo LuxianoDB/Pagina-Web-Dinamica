@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function EsPrimo(number){
+            let Prime = true;
+
+            if (number < 2) {
+                Prime = false;
+            }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    Prime = false;
+                }
+            }
+
+            return Prime;
+        }
+
+        function DigitosPrimos(number){
+            let output = new Array(0);
+            let sNumber = number.toString();
+
+            for (let i = 0; i < sNumber.length; i++) {
+                output.push(+sNumber.charAt(i));
+            }
+
+            let sum = 0;
+            for (let i = 0; i < output.length; i++){
+                sum += output[i];
+            };
+            //--------------
+            let Prime = false;
+            if(EsPrimo(sum)){
+                Prime = true;
+            }
+
+            return Prime;
+        }
+
+        function BuscarPrimos(A,B){
+            let Ar = new Array(0);
+            for(let x = A; x <= B; x++){
+                if(EsPrimo(x) == true && DigitosPrimos(x) == true){
+                    Ar.push(x);
+                }
+            }
+            return Ar;
+        }
+
+        let entry = prompt('ingrese de los numeros con el formato |A B|: ','');
+        let [a,b] = entry.split(" ").map(Number);
+        let Primos = BuscarPrimos(a,b);
+        document.write(Primos);
+    </script>
+</body>
+</html>
