@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Promedio(Long, Ar){
+            let suma = 0;
+
+            Ar.forEach(element => {
+                suma += element;
+            });
+
+            return suma/Long;
+        }
+
+        function ElementosMayores(Ar, mayor){
+            let B = new Array(0);
+
+            Ar.forEach(element => {
+                if(element > mayor){
+                    B.push(element);
+                }
+            });
+
+            return B;
+        }
+
+        function MultiplosD2y3(Ar){
+            let multiplos = 0;
+
+            Ar.forEach(element => {
+                if(element%2 == 0 || element%3  == 0){
+                    multiplos++;
+                }
+            });
+
+            return multiplos;
+        }
+
+        function SumaTotal(Ar){
+            let suma = 0;
+
+            Ar.forEach(element => {
+                suma += element;
+            });
+
+            return suma;
+        }
+
+        function Doble(Ar){
+            let double = new Array(0);
+
+            Ar.forEach(element => {
+                double.push(element * 2);
+            });
+
+            return double;
+        }
+
+        let x = parseInt(prompt('ingrese numero: ',''));
+
+        let A = new Array(x);
+
+        for(let i = 0; i < x; i++){
+            A[i] = Math.floor(Math.random() * 32000);
+        }
+
+        let prom = Promedio(x,A);
+
+        //se que podria haberlo hecho todo en un solo document write pero me gusta verlo estructurado. -LDB
+        document.write("<b>Vector A:</b> " + A + "<br>");
+        document.write("Promedio de los elementos del vector: " + prom + "<br>");
+        document.write("<b>Vector B:</b> Los elementos mayores al promedio del vector: " + ElementosMayores(A,prom) + "<br>");
+        document.write("La cantidad de elementos que son múltiplos a la vez de 2 y 3: " + MultiplosD2y3(A) + "<br>");
+        document.write("La suma de todos los elementos del vector: " + SumaTotal(A) + "<br>");
+        document.write("<b>Vector C:</b> Los elementos del vector multiplicado por 2: " + Doble(A) + "<br>");
+    </script>
+</body>
+</html>
