@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Popular(x,y){
+            let separados = y.split(" ").map(Number);
+            let control = [0,0,0,0,0,0,0,0,0,0]
+
+            separados.forEach(element => {
+                control[element]++;
+            });
+
+            var max = control[0];
+            var maxIndex = 0;
+
+            for (var i = 1; i < control.length; i++) {
+                if (control[i] > max) {
+                    maxIndex = i;
+                    max = control[i];
+                }
+            }
+
+            return maxIndex;
+        }
+
+        let valorAr = new Array(0);
+        let conjuntoAr = new Array(0);
+        let entry =parseInt(prompt("Ingrese el numero de valores del conjunto: ",""));
+        while(entry != 0){
+            //let unido = prompt("Proporcione separados por espacio, los valores de todos los elementos del conjunto en numeros enteros: ","");
+            //let conjunto = unido.split(" ");
+
+            let conjunto = "";
+
+            for(let i = 0; i < entry; i++){
+                conjunto = (conjunto + Math.floor(Math.random() * 9)) + " ";
+            }
+            
+            valorAr.push(entry);
+            conjuntoAr.push(conjunto);
+
+            entry =parseInt(prompt("Ingrese el numero de valores del conjunto: ",""));
+        }
+
+        
+
+        for(let i = 0; i < valorAr.length; i++){
+            document.write(valorAr[i] + "<br>" + conjuntoAr[i] + "<br>" + Popular(valorAr.length, conjuntoAr[i]) + "<br><br>"); 
+        };
+    </script>
+</body>
+</html>
